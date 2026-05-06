@@ -8,7 +8,5 @@ public record UsuarioResponseDTO(
         @JsonProperty(required = true)
         String nome,
         @JsonProperty(required = true)
-        String email,
-        @JsonProperty(required = true)
-        String senha) {
+        String email) {
 }
