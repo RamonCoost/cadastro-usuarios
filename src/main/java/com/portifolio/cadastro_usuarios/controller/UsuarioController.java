@@ -31,6 +31,12 @@ public class UsuarioController {
         return ResponseEntity.ok(service.buscaTodosUsuarios());
     }
 
+    @PutMapping
+    public ResponseEntity<UsuarioResponseDTO> atualizaUsuario(@RequestBody UsuarioRequestDTO requestDTO,
+                                                              @RequestParam ("id") Long id) {
+        return ResponseEntity.ok(service.atualizaUsuario(requestDTO, id));
+    }
+
     @DeleteMapping("/{email}")
     public ResponseEntity<Void> deletaUsuarioPorEmail(@PathVariable("email") String email) {
         service.deleteUsuarioPorEmail(email);
